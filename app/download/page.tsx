@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Download, X } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
 
 const brochures = [
   { name: "ICODE™", slug: "icode", img: "/images/icode_brochure.png" },
@@ -53,57 +54,65 @@ export default function DownloadPage() {
       </div>
 
       {/* Brochures */}
-      <section className="py-16 bg-[#fafafa]">
+      <section className="py-16 bg-[#fafafa] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[#2b2b2b] mb-2">Product Brochures</h2>
-          <p className="text-[#605f5f] mb-8">Download detailed brochures for each product</p>
+          <FadeIn>
+            <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-2">Product Brochures</h2>
+            <p className="text-[#605f5f] dark:text-gray-400 mb-8">Download detailed brochures for each product</p>
+          </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {brochures.map((b) => (
-              <div key={b.slug} className="bg-white border border-[#e8e8e8] rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
-                <div className="relative aspect-[3/4] bg-[#fafafa]">
-                  <Image src={b.img} alt={b.name} fill className="object-contain p-2" />
+            {brochures.map((b, i) => (
+              <FadeIn key={b.slug} delay={i * 0.05}>
+                <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+                  <div className="relative aspect-[3/4] bg-[#fafafa] dark:bg-gray-800">
+                    <Image src={b.img} alt={b.name} fill className="object-contain p-2" />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-sm font-semibold text-[#2b2b2b] dark:text-gray-100 mb-2">{b.name}</p>
+                    <a
+                      href={b.img}
+                      download
+                      className="flex items-center gap-1 text-xs text-[#c52100] font-medium hover:underline"
+                    >
+                      <Download size={12} />
+                      Download PDF
+                    </a>
+                  </div>
                 </div>
-                <div className="p-3">
-                  <p className="text-sm font-semibold text-[#2b2b2b] mb-2">{b.name}</p>
-                  <a
-                    href={b.img}
-                    download
-                    className="flex items-center gap-1 text-xs text-[#c52100] font-medium hover:underline"
-                  >
-                    <Download size={12} />
-                    Download PDF
-                  </a>
-                </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
       {/* Software Packages */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[#2b2b2b] mb-2">Software Packages</h2>
-          <p className="text-[#605f5f] mb-8">Request a download for your chosen package</p>
+          <FadeIn>
+            <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-2">Software Packages</h2>
+            <p className="text-[#605f5f] dark:text-gray-400 mb-8">Request a download for your chosen package</p>
+          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {softwarePackages.map((pkg) => (
-              <div key={pkg.name} className="border border-[#e8e8e8] rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-1 bg-[#c52100]" />
-                <div className="p-6">
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-2xl font-bold text-[#c52100]">{pkg.name}</span>
-                    <span className="text-sm text-[#605f5f]">{pkg.full}</span>
+            {softwarePackages.map((pkg, i) => (
+              <FadeIn key={pkg.name} delay={i * 0.1}>
+                <div className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                  <div className="h-1 bg-[#c52100]" />
+                  <div className="p-6">
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="text-2xl font-bold text-[#c52100]">{pkg.name}</span>
+                      <span className="text-sm text-[#605f5f] dark:text-gray-400">{pkg.full}</span>
+                    </div>
+                    <p className="text-[#2b2b2b] dark:text-gray-100 mb-2 text-sm">{pkg.desc}</p>
+                    <p className="text-xs text-[#605f5f] dark:text-gray-400 mb-6 font-medium">{pkg.includes}</p>
+                    <button
+                      onClick={() => openModal(pkg.name)}
+                      className="w-full bg-[#c52100] hover:bg-[#a01900] text-white font-semibold py-2 rounded-lg transition-colors text-sm"
+                    >
+                      Request Download
+                    </button>
                   </div>
-                  <p className="text-[#2b2b2b] mb-2 text-sm">{pkg.desc}</p>
-                  <p className="text-xs text-[#605f5f] mb-6 font-medium">{pkg.includes}</p>
-                  <button
-                    onClick={() => openModal(pkg.name)}
-                    className="w-full bg-[#c52100] hover:bg-[#a01900] text-white font-semibold py-2 rounded-lg transition-colors text-sm"
-                  >
-                    Request Download
-                  </button>
                 </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -112,19 +121,19 @@ export default function DownloadPage() {
       {/* Modal */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
-          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
+          <div className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-md w-full p-8 relative">
             <button
               onClick={() => setModalOpen(false)}
-              className="absolute top-4 right-4 text-[#605f5f] hover:text-[#2b2b2b] transition-colors"
+              className="absolute top-4 right-4 text-[#605f5f] dark:text-gray-400 hover:text-[#2b2b2b] dark:hover:text-gray-100 transition-colors"
               aria-label="Close"
             >
               <X size={20} />
             </button>
-            <h3 className="text-xl font-bold text-[#2b2b2b] mb-2">Request Download — {selectedPkg}</h3>
-            <p className="text-[#605f5f] mb-4">
+            <h3 className="text-xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-2">Request Download — {selectedPkg}</h3>
+            <p className="text-[#605f5f] dark:text-gray-400 mb-4">
               Please contact us to request your download link for the <strong>{selectedPkg}</strong> package.
             </p>
-            <p className="text-[#2b2b2b] font-medium">
+            <p className="text-[#2b2b2b] dark:text-gray-100 font-medium">
               Email:{" "}
               <a href="mailto:sales@shear3d.com" className="text-[#c52100] hover:underline">
                 sales@shear3d.com

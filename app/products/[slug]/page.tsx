@@ -77,14 +77,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       {/* Breadcrumb */}
-      <div className="bg-white border-b border-[#e8e8e8] py-3">
+      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-1 text-sm text-[#605f5f]">
+          <nav className="flex items-center gap-1 text-sm text-[#605f5f] dark:text-gray-400">
             <Link href="/" className="hover:text-[#c52100] transition-colors">Home</Link>
             <ChevronRight size={14} />
             <Link href="/products" className="hover:text-[#c52100] transition-colors">Products</Link>
             <ChevronRight size={14} />
-            <span className="text-[#2b2b2b] font-medium">{product.name}</span>
+            <span className="text-[#2b2b2b] dark:text-gray-100 font-medium">{product.name}</span>
           </nav>
         </div>
       </div>
@@ -98,17 +98,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Content */}
-      <section className="py-16 bg-[#fafafa]">
+      <section className="py-16 bg-[#fafafa] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left */}
             <div>
-              <h2 className="text-2xl font-bold text-[#2b2b2b] mb-4">Overview</h2>
-              <p className="text-[#605f5f] leading-relaxed mb-6">{product.desc}</p>
-              <h3 className="text-lg font-semibold text-[#2b2b2b] mb-3">Key Features</h3>
+              <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-4">Overview</h2>
+              <p className="text-[#605f5f] dark:text-gray-300 leading-relaxed mb-6">{product.desc}</p>
+              <h3 className="text-lg font-semibold text-[#2b2b2b] dark:text-gray-100 mb-3">Key Features</h3>
               <ul className="space-y-2">
                 {product.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-[#605f5f]">
+                  <li key={f} className="flex items-center gap-3 text-[#605f5f] dark:text-gray-300">
                     <span className="w-2 h-2 rounded-full bg-[#c52100] shrink-0" />
                     {f}
                   </li>
@@ -132,7 +132,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
             {/* Right: image */}
             <div className="flex items-start justify-center">
-              <div className="relative w-full max-w-md aspect-[4/3] rounded-lg overflow-hidden shadow-lg border border-[#e8e8e8]">
+              <div className="relative w-full max-w-md aspect-[4/3] rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
                 <Image src={product.img} alt={product.name} fill className="object-cover" />
               </div>
             </div>

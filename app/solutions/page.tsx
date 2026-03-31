@@ -66,7 +66,7 @@ export default function SolutionsPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 dark:bg-gray-950">
         <div className="flex gap-12">
           {/* Sidebar */}
           <aside className="hidden lg:block w-56 shrink-0">
@@ -76,12 +76,12 @@ export default function SolutionsPage() {
                   <a
                     key={s.id}
                     href={`#${s.id}`}
-                    className="block px-3 py-2 text-sm text-[#605f5f] hover:text-[#c52100] hover:bg-[#fafafa] rounded transition-colors"
+                    className="block px-3 py-2 text-sm text-[#605f5f] dark:text-gray-400 hover:text-[#c52100] dark:hover:text-[#c52100] hover:bg-[#fafafa] dark:hover:bg-gray-800 rounded transition-colors"
                   >
                     {s.title}
                   </a>
                 ))}
-                <a href="#packages" className="block px-3 py-2 text-sm text-[#605f5f] hover:text-[#c52100] hover:bg-[#fafafa] rounded transition-colors">
+                <a href="#packages" className="block px-3 py-2 text-sm text-[#605f5f] dark:text-gray-400 hover:text-[#c52100] dark:hover:text-[#c52100] hover:bg-[#fafafa] dark:hover:bg-gray-800 rounded transition-colors">
                   Package Comparison
                 </a>
               </nav>
@@ -92,9 +92,9 @@ export default function SolutionsPage() {
           <main className="flex-1 space-y-16">
             {sections.map((s) => (
               <section key={s.id} id={s.id} className="scroll-mt-24">
-                <h2 className="text-2xl font-bold text-[#2b2b2b] mb-4 pb-2 border-b border-[#e8e8e8]">{s.title}</h2>
-                <p className="text-[#605f5f] leading-relaxed text-lg">{s.content}</p>
-                <p className="mt-4 text-sm text-[#605f5f]">
+                <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-4 pb-2 border-b border-[#e8e8e8] dark:border-gray-700">{s.title}</h2>
+                <p className="text-[#605f5f] dark:text-gray-300 leading-relaxed text-lg">{s.content}</p>
+                <p className="mt-4 text-sm text-[#605f5f] dark:text-gray-400">
                   <Link href="/contact" className="text-[#c52100] font-semibold hover:underline">Contact us</Link> for pricing and availability.
                 </p>
               </section>
@@ -102,9 +102,9 @@ export default function SolutionsPage() {
 
             {/* Package comparison */}
             <section id="packages" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-[#2b2b2b] mb-6 pb-2 border-b border-[#e8e8e8]">Package Comparison</h2>
+              <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-6 pb-2 border-b border-[#e8e8e8] dark:border-gray-700">Package Comparison</h2>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-[#e8e8e8] rounded-lg overflow-hidden">
+                <table className="w-full text-sm border border-[#e8e8e8] dark:border-gray-700 rounded-lg overflow-hidden">
                   <thead>
                     <tr className="bg-[#2b2b2b] text-white">
                       <th className="px-4 py-3 text-left">Package</th>
@@ -116,12 +116,12 @@ export default function SolutionsPage() {
                   </thead>
                   <tbody>
                     {packages.map((pkg, i) => (
-                      <tr key={pkg.name} className={i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"}>
+                      <tr key={pkg.name} className={i % 2 === 0 ? "bg-white dark:bg-gray-900" : "bg-[#fafafa] dark:bg-gray-950"}>
                         <td className="px-4 py-3 font-bold text-[#c52100]">{pkg.name}</td>
-                        <td className="px-4 py-3 text-[#2b2b2b]">{pkg.full}</td>
-                        <td className="px-4 py-3 text-[#605f5f]">{pkg.products.join(", ")}</td>
-                        <td className="px-4 py-3 text-[#605f5f]">{pkg.suitedFor}</td>
-                        <td className="px-4 py-3 text-[#605f5f] font-medium">Contact for Pricing</td>
+                        <td className="px-4 py-3 text-[#2b2b2b] dark:text-gray-100">{pkg.full}</td>
+                        <td className="px-4 py-3 text-[#605f5f] dark:text-gray-400">{pkg.products.join(", ")}</td>
+                        <td className="px-4 py-3 text-[#605f5f] dark:text-gray-400">{pkg.suitedFor}</td>
+                        <td className="px-4 py-3 text-[#605f5f] dark:text-gray-400 font-medium">Contact for Pricing</td>
                       </tr>
                     ))}
                   </tbody>

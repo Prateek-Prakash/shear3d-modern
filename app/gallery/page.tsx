@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import FadeIn from "@/components/FadeIn";
 
 const images = [
   { src: "/gallery-images/3Block-12UnitsComplex.jpg", title: "3-Block 12-Units Complex" },
@@ -34,30 +35,31 @@ export default function GalleryPage() {
         </div>
       </div>
 
-      <section className="py-16 bg-[#fafafa]">
+      <section className="py-16 bg-[#fafafa] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {images.map((img, i) => (
-              <div
-                key={img.src}
-                className="group relative cursor-pointer overflow-hidden rounded-lg border border-[#e8e8e8] bg-white hover:shadow-lg transition-shadow"
-                onClick={() => setPhotoIndex(i)}
-              >
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={img.src}
-                    alt={img.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    unoptimized
-                  />
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end">
-                  <div className="w-full px-4 py-3 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="font-semibold text-sm">{img.title}</p>
+              <FadeIn key={img.src} delay={i * 0.04}>
+                <div
+                  className="group relative cursor-pointer overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+                  onClick={() => setPhotoIndex(i)}
+                >
+                  <div className="relative aspect-[4/3]">
+                    <Image
+                      src={img.src}
+                      alt={img.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end">
+                    <div className="w-full px-4 py-3 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="font-semibold text-sm">{img.title}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>

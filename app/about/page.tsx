@@ -44,7 +44,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 dark:bg-gray-950">
         <div className="flex gap-12">
           {/* Sticky sidebar */}
           <aside className="hidden lg:block w-56 shrink-0">
@@ -54,7 +54,7 @@ export default function AboutPage() {
                   <a
                     key={s.id}
                     href={`#${s.id}`}
-                    className="block px-3 py-2 text-sm text-[#605f5f] hover:text-[#c52100] hover:bg-[#fafafa] rounded transition-colors"
+                    className="block px-3 py-2 text-sm text-[#605f5f] dark:text-gray-400 hover:text-[#c52100] dark:hover:text-[#c52100] hover:bg-[#fafafa] dark:hover:bg-gray-800 rounded transition-colors"
                   >
                     {s.title}
                   </a>
@@ -67,8 +67,8 @@ export default function AboutPage() {
           <main className="flex-1 space-y-16">
             {sections.map((s) => (
               <section key={s.id} id={s.id} className="scroll-mt-24">
-                <h2 className="text-2xl font-bold text-[#2b2b2b] mb-4 pb-2 border-b border-[#e8e8e8]">{s.title}</h2>
-                <p className="text-[#605f5f] leading-relaxed text-lg">{s.content}</p>
+                <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-4 pb-2 border-b border-[#e8e8e8] dark:border-gray-700">{s.title}</h2>
+                <p className="text-[#605f5f] dark:text-gray-300 leading-relaxed text-lg">{s.content}</p>
               </section>
             ))}
           </main>
