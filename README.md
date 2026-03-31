@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shear3D Modern
+
+A modern rebuild of the [Shear3D Consulting](https://shear3d.com) website — structural engineering software for professionals. Migrated from a legacy XHTML/jQuery/Flash stack to **Next.js 15**, **Tailwind CSS v4**, and **TypeScript**.
+
+## Tech Stack
+
+| | |
+|---|---|
+| **Framework** | [Next.js 15](https://nextjs.org) (App Router) |
+| **Language** | TypeScript |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com) |
+| **Icons** | [lucide-react](https://lucide.dev) + custom SVG social icons |
+| **Carousel** | [Embla Carousel](https://www.embla-carousel.com) |
+| **Forms** | [React Hook Form](https://react-hook-form.com) |
+| **Gallery** | [yet-another-react-lightbox](https://yet-another-react-lightbox.com) |
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home — hero carousel, package cards, benefits, testimonial |
+| `/about` | Company overview, history, mission, team |
+| `/products` | Product catalog — 6 structural engineering apps |
+| `/products/[slug]` | Individual product pages (icode, dxfmod, anapro, strip, slam, slide) |
+| `/solutions` | Service tiers — purchase, lease, on-demand, consulting, CAE/FEA |
+| `/download` | Brochures & software package downloads |
+| `/gallery` | Project showcase with lightbox |
+| `/contact` | Contact form + office details |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms & disclaimer |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+shear3d-modern/
+├── app/                  # Next.js App Router pages & API routes
+│   ├── about/
+│   ├── api/
+│   │   ├── contact/      # Contact form handler
+│   │   └── subscribe/    # Newsletter subscribe handler
+│   ├── contact/
+│   ├── download/
+│   ├── gallery/
+│   ├── privacy/
+│   ├── products/
+│   │   └── [slug]/       # Dynamic product detail pages
+│   ├── solutions/
+│   ├── terms/
+│   ├── globals.css
+│   ├── layout.tsx        # Root layout (Navbar + Footer)
+│   └── page.tsx          # Home page
+├── components/
+│   ├── Footer.tsx
+│   ├── HeroCarousel.tsx
+│   ├── Navbar.tsx
+│   └── SocialIcons.tsx
+└── public/
+    ├── images/           # Product & UI images
+    └── gallery-images/   # Project showcase images
+```
 
-## Learn More
+## About Shear3D
 
-To learn more about Next.js, take a look at the following resources:
+Shear3D Consulting has been delivering structural engineering software since 1991. Their suite of products covers the full workflow — from structural modeling (DXFMOD, SLAM) to FEM analysis (ANAPRO) to post-processing (STRIP) to design & detailing (SLIDE, ICODE).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy is via [Vercel](https://vercel.com/new):
 
-## Deploy on Vercel
+```bash
+npm run build   # verify build passes locally first
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Prateek-Prakash/shear3d-modern)
