@@ -125,7 +125,7 @@ const galleryPreview = [
   { src: "/gallery-images/90m_Steel_Dome.jpg", title: "90m Steel Dome" },
   { src: "/gallery-images/CircularOfficeBuilding.jpg", title: "Circular Office Building" },
   { src: "/gallery-images/IndoorStadium.jpg", title: "Indoor Stadium" },
-  { src: "/gallery-images/Multi Storey Apartment Building.jpg", title: "Multi Storey Apartment" },
+  { src: "/gallery-images/Multi-Storey-Apartment-Building.jpg", title: "Multi Storey Apartment" },
   { src: "/gallery-images/40m_Double_Layer_Grid.jpg", title: "40m Double Layer Grid" },
   { src: "/gallery-images/SingleLayer_Steel_Dome.jpg", title: "Single Layer Steel Dome" },
 ];
