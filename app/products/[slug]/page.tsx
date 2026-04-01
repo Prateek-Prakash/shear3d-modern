@@ -99,14 +99,18 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
       {/* Content */}
       <section className="py-16 bg-[#fafafa] dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left */}
-            <div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm">
+            {/* Image header — matches products listing card style */}
+            <div className="w-full bg-gray-100 dark:bg-gray-800">
+              <Image src={product.img} alt={product.name} width={298} height={101} className="w-full h-auto" style={{ filter: "contrast(1.1) brightness(1.02)" }} priority />
+            </div>
+            <div className="h-1 bg-[#c52100]" />
+            <div className="p-8">
               <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-4">Overview</h2>
               <p className="text-[#605f5f] dark:text-gray-300 leading-relaxed mb-6">{product.desc}</p>
               <h3 className="text-lg font-semibold text-[#2b2b2b] dark:text-gray-100 mb-3">Key Features</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-8">
                 {product.features.map((f) => (
                   <li key={f} className="flex items-center gap-3 text-[#605f5f] dark:text-gray-300">
                     <span className="w-2 h-2 rounded-full bg-[#c52100] shrink-0" />
@@ -114,7 +118,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-4">
                 <a
                   href="#"
                   className="flex items-center gap-2 bg-[#c52100] hover:bg-[#a01900] text-white font-semibold px-6 py-2.5 rounded-lg transition-colors"
@@ -128,12 +132,6 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 >
                   Contact Sales
                 </Link>
-              </div>
-            </div>
-            {/* Right: image */}
-            <div className="flex items-start justify-center">
-              <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 flex items-center justify-center p-3">
-                <Image src={product.img} alt={product.name} width={298} height={101} className="max-w-[298px] w-full h-auto" style={{ filter: "contrast(1.1) brightness(1.02)" }} />
               </div>
             </div>
           </div>
