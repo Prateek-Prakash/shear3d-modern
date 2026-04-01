@@ -34,7 +34,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 py-3">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/Shear3D-Transparent-Text-128.png" alt="Shear3D" width={160} height={48} className="h-10 w-auto" />
+            {/* Light mode: charcoal SHEAR text */}
+            <Image src="/images/Shear3D-Transparent-Text-128.png" alt="Shear3D" width={160} height={48} className="h-10 w-auto block dark:hidden" />
+            {/* Dark mode: white SHEAR text */}
+            <Image src="/images/Shear3D-Transparent-Text-128-dark.png" alt="Shear3D" width={160} height={48} className="h-10 w-auto hidden dark:block" />
           </Link>
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
