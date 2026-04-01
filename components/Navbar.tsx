@@ -35,9 +35,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20 py-3">
           <Link href="/" className="flex items-center gap-2">
             {/* Light mode: charcoal SHEAR text */}
-            <Image src="/images/Shear3D-Transparent-Text-128.png" alt="Shear3D" width={160} height={48} className="h-10 w-auto block dark:hidden" />
+            <Image src="/images/Shear3D-Transparent-Text-128.png" alt="Shear3D" width={160} height={40} style={{ height: "40px", width: "auto" }} className="block dark:hidden" />
             {/* Dark mode: white SHEAR text */}
-            <Image src="/images/Shear3D-Transparent-Text-128-dark.png" alt="Shear3D" width={160} height={48} className="h-10 w-auto hidden dark:block" />
+            <Image src="/images/Shear3D-Transparent-Text-128-dark.png" alt="Shear3D" width={160} height={40} style={{ height: "40px", width: "auto" }} className="hidden dark:block" />
           </Link>
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
