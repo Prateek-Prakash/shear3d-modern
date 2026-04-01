@@ -191,7 +191,7 @@ export default function HomePage() {
             </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p, i) => (
-                <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
+                <div key={p.slug} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
                   <div className="h-1 bg-[#c52100]" />
                   <div className="p-6 flex flex-col flex-1">
                     <div className="mb-3">
@@ -226,7 +226,7 @@ export default function HomePage() {
             <p className="text-center text-gray-600 dark:text-gray-400 mb-12">Bundle the right tools for your workflow</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packages.map((pkg, i) => (
-                <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
+                <div key={pkg.abbr} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
                   <div className="h-1 bg-[#c52100]" />
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-baseline gap-2 mb-3">
@@ -306,7 +306,7 @@ export default function HomePage() {
             {services.map((svc, i) => {
               const Icon = svc.icon;
               return (
-                  <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-6 h-full flex flex-col">
+                  <div key={svc.title} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-6 h-full flex flex-col">
                     <div className="bg-[#c52100]/10 text-[#c52100] p-2 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
                       <Icon size={20} />
                     </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
             </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {galleryPreview.map((img, i) => (
-                <Link href="/gallery">
+                <Link key={img.src} href="/gallery">
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
                     <Image
                       src={img.src}
