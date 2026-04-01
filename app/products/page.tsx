@@ -71,11 +71,11 @@ export default function ProductsPage() {
 
       <section className="py-16 bg-[#fafafa] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p) => (
               <div key={p.slug} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div className="relative w-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center py-3">
-                  <Image src={p.img} alt={p.name} width={298} height={101} className="max-w-[298px] w-full h-auto" style={{ imageRendering: "auto", filter: "contrast(1.1) brightness(1.02)" }} />
+                <div className="relative w-full bg-gray-100 dark:bg-gray-800">
+                  <Image src={p.img} alt={p.name} width={298} height={101} className="w-full h-auto" style={{ filter: "contrast(1.1) brightness(1.02)" }} />
                 </div>
                 <div className="h-1 bg-[#c52100]" />
                 <div className="p-6 flex flex-col flex-1">
