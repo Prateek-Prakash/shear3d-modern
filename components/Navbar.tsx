@@ -32,9 +32,9 @@ export default function Navbar() {
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-md" : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20 py-3">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/Shear3D-Transparent-Text-128.png" alt="Shear3D" width={200} height={64} className="h-14 w-auto" />
+            <Image src="/images/Shear3D-Transparent-Text-128.png" alt="Shear3D" width={160} height={48} className="h-10 w-auto" />
           </Link>
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
