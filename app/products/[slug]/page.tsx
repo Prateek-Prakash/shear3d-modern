@@ -132,8 +132,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
             {/* Right: image */}
             <div className="flex items-start justify-center">
-              <div className="w-full max-w-md rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
-                <Image src={product.img} alt={product.name} width={298} height={101} className="w-full h-auto" />
+              <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 flex items-center justify-center p-3">
+                <Image src={product.img} alt={product.name} width={298} height={101} className="max-w-[298px] w-full h-auto" style={{ filter: "contrast(1.1) brightness(1.02)" }} />
               </div>
             </div>
           </div>
