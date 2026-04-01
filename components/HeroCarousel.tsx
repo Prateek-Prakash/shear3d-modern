@@ -8,19 +8,16 @@ const slides = [
     title: "Welcome to Shear3D Consulting",
     subtitle: "Home to Structural Engineering Professionals",
     cta: { label: "Explore Products", href: "/products" },
-    bg: "from-slate-900 to-slate-800",
   },
   {
     title: "Powerful Structural Engineering Software",
     subtitle: "From modeling to analysis to design — all in one place",
     cta: { label: "View Solutions", href: "/solutions" },
-    bg: "from-slate-900 to-slate-800",
   },
   {
     title: "30+ Years of Engineering Excellence",
     subtitle: "Trusted by structural engineers since 1991",
     cta: { label: "Contact Us", href: "/contact" },
-    bg: "from-slate-900 to-slate-800",
   },
 ];
 
@@ -39,7 +36,7 @@ export default function HeroCarousel() {
         {slides.map((slide, i) => (
           <div
             key={i}
-            className={`min-w-full h-[480px] bg-gradient-to-br ${slide.bg} flex items-center justify-center relative`}
+            className="min-w-full h-[480px] bg-slate-900 flex items-center justify-center relative"
           >
             <div className="absolute inset-0 bg-black/30" />
             <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
