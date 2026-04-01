@@ -1,6 +1,5 @@
 "use client";
 import HeroCarousel from "@/components/HeroCarousel";
-import FadeIn from "@/components/FadeIn";
 import Link from "next/link";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
@@ -179,7 +178,6 @@ export default function HomePage() {
       {/* SECTION 3: Products */}
       <section id="products" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-3">
               <div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-[#c52100] to-orange-500 bg-clip-text text-transparent mb-2">
@@ -191,10 +189,8 @@ export default function HomePage() {
                 View All Products →
               </Link>
             </div>
-          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p, i) => (
-              <FadeIn key={p.slug} delay={i * 0.08}>
                 <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
                   <div className="h-1 bg-[#c52100]" />
                   <div className="p-6 flex flex-col flex-1">
@@ -216,7 +212,6 @@ export default function HomePage() {
                     </Link>
                   </div>
                 </div>
-              </FadeIn>
             ))}
           </div>
         </div>
@@ -225,15 +220,12 @@ export default function HomePage() {
       {/* SECTION 4: Packages */}
       <section id="packages" className="py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
             <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-[#c52100] to-orange-500 bg-clip-text text-transparent mb-2">
               Solution Packages
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400 mb-12">Bundle the right tools for your workflow</p>
-          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packages.map((pkg, i) => (
-              <FadeIn key={pkg.abbr} delay={i * 0.1}>
                 <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
                   <div className="h-1 bg-[#c52100]" />
                   <div className="p-6 flex flex-col flex-1">
@@ -254,7 +246,6 @@ export default function HomePage() {
                     </Link>
                   </div>
                 </div>
-              </FadeIn>
             ))}
           </div>
         </div>
@@ -264,7 +255,6 @@ export default function HomePage() {
       <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <FadeIn>
               <p className="text-xs font-semibold text-[#c52100] uppercase tracking-widest mb-3">About Shear3D</p>
               <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-5">Engineering Excellence Since 1991</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
@@ -286,8 +276,6 @@ export default function HomePage() {
               <Link href="/about" className="text-[#c52100] font-semibold hover:underline text-sm">
                 Learn More About Us →
               </Link>
-            </FadeIn>
-            <FadeIn delay={0.15}>
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
                 <div className="text-7xl font-serif text-[#c52100] leading-none mb-4">&ldquo;</div>
                 <p className="text-lg italic text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
@@ -296,7 +284,6 @@ export default function HomePage() {
                 </p>
                 <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">— Shear3D Consulting Mission</p>
               </div>
-            </FadeIn>
           </div>
         </div>
       </section>
@@ -304,7 +291,6 @@ export default function HomePage() {
       {/* SECTION 6: Services / Solutions */}
       <section id="solutions" className="py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-3">
               <div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-[#c52100] to-orange-500 bg-clip-text text-transparent mb-2">
@@ -316,12 +302,10 @@ export default function HomePage() {
                 View All Solutions →
               </Link>
             </div>
-          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc, i) => {
               const Icon = svc.icon;
               return (
-                <FadeIn key={svc.title} delay={i * 0.08}>
                   <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-6 h-full flex flex-col">
                     <div className="bg-[#c52100]/10 text-[#c52100] p-2 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
                       <Icon size={20} />
@@ -332,7 +316,6 @@ export default function HomePage() {
                       Learn More →
                     </Link>
                   </div>
-                </FadeIn>
               );
             })}
           </div>
@@ -342,7 +325,6 @@ export default function HomePage() {
       {/* SECTION 7: Gallery Preview */}
       <section id="gallery" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-3">
               <div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-[#c52100] to-orange-500 bg-clip-text text-transparent mb-2">
@@ -354,10 +336,8 @@ export default function HomePage() {
                 View Full Gallery →
               </Link>
             </div>
-          </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {galleryPreview.map((img, i) => (
-              <FadeIn key={img.src} delay={i * 0.07}>
                 <Link href="/gallery">
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
                     <Image
@@ -373,7 +353,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </Link>
-              </FadeIn>
             ))}
           </div>
         </div>
@@ -382,15 +361,12 @@ export default function HomePage() {
       {/* SECTION 8: Contact */}
       <section id="contact" className="py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
             <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-[#c52100] to-orange-500 bg-clip-text text-transparent mb-2">
               Get In Touch
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400 mb-12">Have a question? We&apos;d love to hear from you.</p>
-          </FadeIn>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <FadeIn>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -457,10 +433,8 @@ export default function HomePage() {
                   {isSubmitting ? "Sending…" : "Send Message"}
                 </button>
               </form>
-            </FadeIn>
 
             {/* Contact Details */}
-            <FadeIn delay={0.15}>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">Contact Information</h3>
@@ -526,7 +500,6 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
-            </FadeIn>
           </div>
         </div>
       </section>
@@ -534,7 +507,6 @@ export default function HomePage() {
       {/* SECTION 9: CTA Banner */}
       <section className="py-20 bg-gradient-to-r from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <FadeIn>
             <h2 className="text-3xl font-bold mb-4">Ready to streamline your structural engineering workflow?</h2>
             <p className="text-white/80 mb-8 text-lg">Join hundreds of structural engineers who trust Shear3D software.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -545,7 +517,6 @@ export default function HomePage() {
                 Contact Us
               </Link>
             </div>
-          </FadeIn>
         </div>
       </section>
     </>
