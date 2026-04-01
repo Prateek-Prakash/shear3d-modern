@@ -30,7 +30,7 @@ export default function Navbar() {
   const isHome = pathname === "/";
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-md" : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md"} border-b border-gray-200 dark:border-gray-800`}>
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-md" : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
