@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: About */}
           <div>
-            <Image src="/images/Shear3D-Transparent-Text-128-dark.png" alt="Shear3D" width={503} height={128} style={{ height: "40px", width: "auto" }} className="mb-3" />
+            <Image src="/images/Shear3D-Transparent-Text-128-dark.png" alt="Shear3D" width={503} height={128} style={{ height: "40px", width: "auto", filter: "saturate(1.8) brightness(1.08)" }} className="mb-3" />
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
               Structural engineering software and consulting services based in Bangalore, India.
             </p>
