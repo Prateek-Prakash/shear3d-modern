@@ -505,7 +505,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 9: CTA Banner */}
-      <section className="py-20 bg-gradient-to-r from-slate-900 to-slate-700 text-white">
+      <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to streamline your structural engineering workflow?</h2>
             <p className="text-white/80 mb-8 text-lg">Join hundreds of structural engineers who trust Shear3D software.</p>
