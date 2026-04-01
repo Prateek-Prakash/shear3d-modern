@@ -8,19 +8,19 @@ const slides = [
     title: "Welcome to Shear3D Consulting",
     subtitle: "Home to Structural Engineering Professionals",
     cta: { label: "Explore Products", href: "/products" },
-    bg: "from-slate-900 to-slate-700",
+    bg: "from-slate-900 to-slate-800",
   },
   {
     title: "Powerful Structural Engineering Software",
     subtitle: "From modeling to analysis to design — all in one place",
     cta: { label: "View Solutions", href: "/solutions" },
-    bg: "from-blue-900 to-slate-800",
+    bg: "from-slate-900 to-slate-800",
   },
   {
     title: "30+ Years of Engineering Excellence",
     subtitle: "Trusted by structural engineers since 1991",
     cta: { label: "Contact Us", href: "/contact" },
-    bg: "from-slate-800 to-blue-950",
+    bg: "from-slate-900 to-slate-800",
   },
 ];
 
