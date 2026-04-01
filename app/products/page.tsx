@@ -75,7 +75,7 @@ export default function ProductsPage() {
             {products.map((p, i) => (
               <div key={p.slug} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col">
                 <div className="relative w-full h-24 bg-gray-100 dark:bg-gray-800">
-                  <Image src={p.img} alt={p.name} fill className="object-cover" style={{ filter: "contrast(1.1) brightness(1.02)" }} {...(i === 0 ? { priority: true } : i < 3 ? { loading: "eager" } : {})} />
+                  <Image src={p.img} alt={p.name} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover" style={{ filter: "contrast(1.1) brightness(1.02)" }} {...(i === 0 ? { priority: true } : i < 3 ? { loading: "eager" } : {})} />
                 </div>
                 <div className="h-1 bg-[#c52100]" />
                 <div className="p-6 flex flex-col flex-1">

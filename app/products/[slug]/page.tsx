@@ -103,7 +103,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm">
             {/* Image header — matches products listing card style */}
             <div className="relative w-full h-24 bg-gray-100 dark:bg-gray-800">
-              <Image src={product.img} alt={product.name} fill className="object-cover" style={{ filter: "contrast(1.1) brightness(1.02)" }} priority />
+              <Image src={product.img} alt={product.name} fill sizes="(min-width: 768px) 768px, 100vw" className="object-cover" style={{ filter: "contrast(1.1) brightness(1.02)" }} priority />
             </div>
             <div className="h-1 bg-[#c52100]" />
             <div className="p-8">
