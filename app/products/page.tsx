@@ -74,16 +74,14 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {products.map((p) => (
               <div key={p.slug} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div className="relative w-full bg-gray-100 dark:bg-gray-800">
+                  <Image src={p.img} alt={p.name} width={298} height={101} className="w-full h-auto" />
+                </div>
                 <div className="h-1 bg-[#c52100]" />
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative w-24 h-20 shrink-0 rounded overflow-hidden bg-[#fafafa] dark:bg-gray-800">
-                      <Image src={p.img} alt={p.name} fill className="object-cover" />
-                    </div>
-                    <div>
-                      <h2 className="text-xl font-bold text-[#c52100]">{p.name}</h2>
-                      <p className="text-[#605f5f] dark:text-gray-400 text-sm">{p.tagline}</p>
-                    </div>
+                  <div className="mb-4">
+                    <h2 className="text-xl font-bold text-[#c52100]">{p.name}</h2>
+                    <p className="text-[#605f5f] dark:text-gray-400 text-sm">{p.tagline}</p>
                   </div>
                   <p className="text-[#2b2b2b] dark:text-gray-100 text-sm leading-relaxed mb-4">{p.desc}</p>
                   <ul className="space-y-1 mb-6 flex-1">
