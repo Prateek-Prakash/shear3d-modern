@@ -20,6 +20,7 @@ interface Product {
   headerImg: string;
   screenshots: { src: string; width: number; height: number }[];
   brochure: string;
+  installer?: string;
   pkg: string;
   featureSections: FeatureSection[];
 }
@@ -40,6 +41,7 @@ const products: Product[] = [
       { src: "/images/icode_CombFootTab1.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_ICODE_Brochure.pdf",
+    installer: "/downloads/Shear3D_SCP_Install.zip",
     pkg: "Structural Component Package (SCP)",
     featureSections: [
       {
@@ -518,6 +520,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 <Download size={16} />
                 Download Brochure
               </a>
+              {product.installer && (
+                <a
+                  href={product.installer}
+                  download
+                  className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors"
+                >
+                  <Download size={16} />
+                  Download Software (ZIP, 3.8 MB)
+                </a>
+              )}
               <Link
                 href="/contact"
                 className="flex items-center gap-2 border border-[#c52100] text-[#c52100] hover:bg-[#c52100] hover:text-white font-semibold px-6 py-2.5 rounded-lg transition-colors"
