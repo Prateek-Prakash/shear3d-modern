@@ -372,16 +372,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Hero */}
-      <div className="relative text-white">
+      <div className="relative text-white bg-slate-900">
         <Image
           src={product.headerImg}
           alt={product.name}
-          width={1200}
+          width={960}
           height={400}
-          className="w-full h-64 object-cover"
+          className="w-full h-auto"
           priority
         />
-        <div className="absolute inset-0 bg-slate-900/70" />
+        <div className="absolute inset-0 bg-slate-900/60" />
         <div className="absolute inset-0 flex items-end">
           <div className="max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-8 flex flex-col sm:flex-row sm:items-end gap-4">
             <div className="flex-1">
