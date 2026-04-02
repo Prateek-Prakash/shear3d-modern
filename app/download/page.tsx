@@ -60,25 +60,21 @@ export default function DownloadPage() {
             <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-2">Product Brochures</h2>
             <p className="text-[#605f5f] dark:text-gray-400 mb-8">Download detailed brochures for each product</p>
           </FadeIn>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {brochures.map((b, i) => (
               <FadeIn key={b.slug} delay={i * 0.05}>
-                <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
-                  <div className="w-full bg-white dark:bg-gray-900">
-                    <Image src={b.img} alt={b.name} width={298} height={101} className="w-full h-auto" />
+                <a
+                  href={b.img}
+                  download
+                  className="block relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group"
+                >
+                  <Image src={b.img} alt={b.name} width={206} height={58} className="w-full h-auto" />
+                  {/* Hover overlay with name + download cue */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-1">
+                    <span className="text-white text-xs font-semibold">{b.name}</span>
+                    <Download size={14} className="text-white" />
                   </div>
-                  <div className="p-3">
-                    <p className="text-sm font-semibold text-[#2b2b2b] dark:text-gray-100 mb-2">{b.name}</p>
-                    <a
-                      href={b.img}
-                      download
-                      className="flex items-center gap-1 text-xs text-[#c52100] font-medium hover:underline"
-                    >
-                      <Download size={12} />
-                      Download PDF
-                    </a>
-                  </div>
-                </div>
+                </a>
               </FadeIn>
             ))}
           </div>
