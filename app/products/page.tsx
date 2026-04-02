@@ -79,7 +79,6 @@ export default function ProductsPage() {
                     <Image src={p.img} alt={p.name} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover" style={{ filter: "contrast(1.1) brightness(1.02)" }} {...(i === 0 ? { priority: true } : i < 3 ? { loading: "eager" } : {})} />
                   </div>
                 </div>
-                </div>
                 <div className="h-1 bg-[#c52100]" />
                 <div className="p-6 flex flex-col flex-1">
                   <div className="mb-4">
