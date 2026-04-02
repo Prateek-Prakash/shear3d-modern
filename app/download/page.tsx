@@ -64,8 +64,8 @@ export default function DownloadPage() {
             {brochures.map((b, i) => (
               <FadeIn key={b.slug} delay={i * 0.05}>
                 <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
-                  <div className="relative h-20 bg-white dark:bg-gray-900">
-                    <Image src={b.img} alt={b.name} fill sizes="(min-width: 1024px) 17vw, (min-width: 768px) 33vw, 50vw" className="object-contain" />
+                  <div className="w-full bg-white dark:bg-gray-900">
+                    <Image src={b.img} alt={b.name} width={298} height={101} className="w-full h-auto" />
                   </div>
                   <div className="p-3">
                     <p className="text-sm font-semibold text-[#2b2b2b] dark:text-gray-100 mb-2">{b.name}</p>
