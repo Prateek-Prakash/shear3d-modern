@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
-import AnnouncementBar from "@/components/AnnouncementBar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-display" });
@@ -19,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <body className="min-h-screen flex flex-col bg-[#fafafa] dark:bg-gray-950 text-[#2b2b2b] dark:text-gray-100 antialiased">
         <ThemeProvider>
-          <AnnouncementBar />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
