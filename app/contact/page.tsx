@@ -1,9 +1,9 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { MapPin, Mail } from "lucide-react";
+import Link from "next/link";
+import { MapPin, Mail, ChevronRight } from "lucide-react";
 import { FacebookIcon, TwitterIcon, LinkedinIcon, YoutubeIcon } from "@/components/SocialIcons";
-import FadeIn from "@/components/FadeIn";
 
 type FormData = {
   name: string;
@@ -37,11 +37,20 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Page Header */}
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-16">
+      <div className="bg-slate-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-3">Contact Us</h1>
           <p className="text-white/70 text-lg">Get in touch with the Shear3D team</p>
+        </div>
+      </div>
+
+      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center gap-1 text-sm text-[#605f5f] dark:text-gray-400">
+            <Link href="/" className="hover:text-[#c52100] transition-colors">Home</Link>
+            <ChevronRight size={14} />
+            <span className="text-[#2b2b2b] dark:text-gray-100 font-medium">Contact Us</span>
+          </nav>
         </div>
       </div>
 
@@ -49,7 +58,6 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}
-            <FadeIn>
               <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
                 <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-6">Send us a message</h2>
                 {submitStatus === "success" && (
@@ -117,10 +125,8 @@ export default function ContactPage() {
                   </button>
                 </form>
               </div>
-            </FadeIn>
 
             {/* Contact info */}
-            <FadeIn delay={0.15}>
               <div className="space-y-8">
                 <div>
                   <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-6">Contact Information</h2>
@@ -185,7 +191,6 @@ export default function ContactPage() {
                   <p className="text-[#605f5f] dark:text-gray-400 text-sm mt-2">We typically respond within 1 business day.</p>
                 </div>
               </div>
-            </FadeIn>
           </div>
         </div>
       </section>

@@ -137,6 +137,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
+      {/* Related Products */}
+      <section className="py-12 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-6">Other Products</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {products.filter(p => p.slug !== product.slug).slice(0, 3).map(p => (
+              <Link key={p.slug} href={`/products/${p.slug}`} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-[#c52100] hover:shadow-md transition-all group">
+                <p className="font-bold text-[#c52100] group-hover:underline">{p.name}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{p.tagline}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -52,7 +52,7 @@ export default function Navbar() {
                   href={linkHref}
                   className={`px-3 py-2 text-sm font-medium rounded transition-colors ${
                     isActive
-                      ? "text-[#c52100] border-b-2 border-[#c52100]"
+                      ? "text-white bg-[#c52100] rounded-md"
                       : "text-gray-700 dark:text-gray-300 hover:text-[#c52100] dark:hover:text-[#c52100]"
                   }`}
                 >

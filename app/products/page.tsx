@@ -15,6 +15,7 @@ const products = [
     desc: "Free design modules for individual structural components including beams, columns, slabs, and footings.",
     features: ["Beam design per BS/IS codes", "Column and slab design", "Isolated and combined footings", "User-friendly tabbed interface"],
     img: "/images/icode_img.jpg",
+    pricing: "Free",
   },
   {
     slug: "dxfmod",
@@ -23,6 +24,7 @@ const products = [
     desc: "Import AutoCAD DXF files and create precise 2D/3D structural models for analysis.",
     features: ["Import AutoCAD DXF files", "2D and 3D structural modeling", "Truss, beam, plate/shell elements", "Node and element editing tools"],
     img: "/images/dxfmod_img.jpg",
+    pricing: "Contact for Pricing",
   },
   {
     slug: "anapro",
@@ -31,6 +33,7 @@ const products = [
     desc: "Powerful FEM solver for linear static analysis of structural systems.",
     features: ["FEM linear static analysis", "Multiple element types", "Multiple load cases and combinations", "Reaction forces and stress output"],
     img: "/images/anapro_img.jpg",
+    pricing: "Contact for Pricing",
   },
   {
     slug: "strip",
@@ -39,6 +42,7 @@ const products = [
     desc: "Advanced post-processor for visualizing and interpreting FEM analysis results.",
     features: ["Deflected shape visualization", "Stress contour plots", "Force and moment diagrams", "Animation of results"],
     img: "/images/strip_img.jpg",
+    pricing: "Contact for Pricing",
   },
   {
     slug: "slam",
@@ -47,6 +51,7 @@ const products = [
     desc: "3D building structure modeler for complete RC frame and slab systems.",
     features: ["3D building structure modeling", "Seismic load analysis per IS code", "Level-based and grid-based design", "Auto-load generation"],
     img: "/images/slam_img.jpg",
+    pricing: "Contact for Pricing",
   },
   {
     slug: "slide",
@@ -55,6 +60,7 @@ const products = [
     desc: "Integrated design and detailing software per Indian Standards for complete RC structures.",
     features: ["Design per Indian Standards", "Interactive and automated design", "Auto-generated structural drawings", "RC beam, column, slab, footing design"],
     img: "/images/slide_img.jpg",
+    pricing: "Contact for Pricing",
   },
 ];
 
@@ -74,8 +80,11 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p, i) => (
               <div key={p.slug} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div className="w-full bg-gray-100 dark:bg-gray-800">
+                <div className="relative w-full bg-gray-100 dark:bg-gray-800">
                   <Image src={p.img} alt={p.name} width={298} height={101} className="w-full h-auto" style={{ filter: "contrast(1.1) brightness(1.02)" }} {...(i === 0 ? { priority: true } : i < 3 ? { loading: "eager" } : {})} />
+                  <span className={`absolute top-2 right-2 ${p.pricing === "Free" ? "bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-full" : "bg-slate-700 text-white text-xs font-semibold px-2 py-0.5 rounded-full"}`}>
+                    {p.pricing}
+                  </span>
                 </div>
                 <div className="h-1 bg-[#c52100]" />
                 <div className="p-6 flex flex-col flex-1">

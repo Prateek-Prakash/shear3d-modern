@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { ShoppingCart, RefreshCw, Cloud, Building2, Cpu, MapPin, Mail, Send, Download } from "lucide-react";
+import { ShoppingCart, RefreshCw, Cloud, Building2, Cpu, MapPin, Mail, Send, Download, Calendar, Package, Layers, Wrench } from "lucide-react";
 import { FacebookIcon, TwitterIcon, LinkedinIcon, YoutubeIcon } from "@/components/SocialIcons";
 
 type ContactFormData = {
@@ -15,10 +15,10 @@ type ContactFormData = {
 };
 
 const stats = [
-  { value: "30+", label: "Years Experience" },
-  { value: "6", label: "Software Products" },
-  { value: "3", label: "Solution Packages" },
-  { value: "5", label: "Service Offerings" },
+  { value: "30+", label: "Years Experience", icon: Calendar },
+  { value: "6", label: "Software Products", icon: Package },
+  { value: "3", label: "Solution Packages", icon: Layers },
+  { value: "5", label: "Service Offerings", icon: Wrench },
 ];
 
 const products = [
@@ -165,10 +165,14 @@ export default function HomePage() {
       <section className="bg-gray-900 dark:bg-gray-950 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <div className="text-3xl font-bold text-[#c52100]">{s.value}</div>
+            {stats.map((s, idx) => (
+              <div key={s.label} className="relative">
+                <s.icon className="mx-auto mb-2 text-[#c52100]" size={22} />
+                <div className="text-4xl font-extrabold text-[#c52100]">{s.value}</div>
                 <div className="text-sm text-gray-400 mt-1">{s.label}</div>
+                {idx < stats.length - 1 && (
+                  <div className="hidden md:block w-px bg-white/10 h-12 absolute right-0 top-1/2 -translate-y-1/2" />
+                )}
               </div>
             ))}
           </div>

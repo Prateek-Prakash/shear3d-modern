@@ -1,15 +1,16 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { Download, X } from "lucide-react";
+import { Download, X, ChevronRight } from "lucide-react";
 
 const brochures = [
-  { name: "ICODE™", slug: "icode", img: "/images/icode_brochure.png" },
-  { name: "DXFMOD™", slug: "dxfmod", img: "/images/dxfmod_brochure.png" },
-  { name: "ANAPRO™", slug: "anapro", img: "/images/anapro_brochure.png" },
-  { name: "STRIP™", slug: "strip", img: "/images/strip_brochure.png" },
-  { name: "SLAM™", slug: "slam", img: "/images/slam_brochure.png" },
-  { name: "SLIDE™", slug: "slide", img: "/images/slide_brochure.png" },
+  { name: "ICODE™", slug: "icode", img: "/images/icode_brochure.png", pdf: "/brochures/SHEAR3D_ICODE_Brochure.pdf" },
+  { name: "DXFMOD™", slug: "dxfmod", img: "/images/dxfmod_brochure.png", pdf: "/brochures/SHEAR3D_DXFMOD_Brochure.pdf" },
+  { name: "ANAPRO™", slug: "anapro", img: "/images/anapro_brochure.png", pdf: "/brochures/SHEAR3D_ANAPRO_Brochure.pdf" },
+  { name: "STRIP™", slug: "strip", img: "/images/strip_brochure.png", pdf: "/brochures/SHEAR3D_STRIP_Brochure.pdf" },
+  { name: "SLAM™", slug: "slam", img: "/images/slam_brochure.png", pdf: "/brochures/SHEAR3D_SLAM_Brochure.pdf" },
+  { name: "SLIDE™", slug: "slide", img: "/images/slide_brochure.png", pdf: "/brochures/SHEAR3D_SLIDE_Brochure.pdf" },
 ];
 
 const softwarePackages = [
@@ -52,6 +53,16 @@ export default function DownloadPage() {
         </div>
       </div>
 
+      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center gap-1 text-sm text-[#605f5f] dark:text-gray-400">
+            <Link href="/" className="hover:text-[#c52100] transition-colors">Home</Link>
+            <ChevronRight size={14} />
+            <span className="text-[#2b2b2b] dark:text-gray-100 font-medium">Downloads</span>
+          </nav>
+        </div>
+      </div>
+
       {/* Brochures */}
       <section className="py-16 bg-[#fafafa] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +75,7 @@ export default function DownloadPage() {
                   <div className="p-3">
                     <p className="text-sm font-semibold text-[#2b2b2b] dark:text-gray-100 mb-2">{b.name}</p>
                     <a
-                      href={b.img}
+                      href={b.pdf}
                       download
                       className="flex items-center gap-1 text-xs text-[#c52100] font-medium hover:underline"
                     >
