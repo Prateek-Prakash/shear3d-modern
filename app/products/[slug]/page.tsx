@@ -38,6 +38,7 @@ const products: Product[] = [
       { src: "/images/icode_ColumnDesignTab.png", width: 800, height: 500 },
       { src: "/images/icode_SlabDesignTab.png", width: 800, height: 500 },
       { src: "/images/icode_IFDesignTab.png", width: 800, height: 500 },
+      { src: "/images/icode_CombFootTab1.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_ICODE_Brochure.pdf",
     pkg: "Structural Component Package (SCP)",
@@ -82,6 +83,9 @@ const products: Product[] = [
       { src: "/images/dxfmod_app_img1.png", width: 800, height: 500 },
       { src: "/images/dxfmod_app_img2.png", width: 800, height: 500 },
       { src: "/images/dxfmod_app_img3.png", width: 800, height: 500 },
+      { src: "/images/dxfmod_app_img4.png", width: 800, height: 500 },
+      { src: "/images/dxfmod_app_img5.png", width: 800, height: 500 },
+      { src: "/images/dxfmod_app_img6.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_DXFMOD_Brochure.pdf",
     pkg: "General Structure Package (GSP)",
@@ -162,6 +166,9 @@ const products: Product[] = [
       { src: "/images/strip_app_img1.png", width: 800, height: 500 },
       { src: "/images/strip_app_img2.png", width: 800, height: 500 },
       { src: "/images/strip_app_img3.png", width: 800, height: 500 },
+      { src: "/images/strip_app_img4.png", width: 800, height: 500 },
+      { src: "/images/strip_app_img5.png", width: 800, height: 500 },
+      { src: "/images/strip_app_img6.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_STRIP_Brochure.pdf",
     pkg: "General Structure Package (GSP)",
@@ -218,6 +225,9 @@ const products: Product[] = [
       { src: "/images/slam_app_img1.png", width: 800, height: 500 },
       { src: "/images/slam_app_img2.png", width: 800, height: 500 },
       { src: "/images/slam_app_img3.png", width: 800, height: 500 },
+      { src: "/images/slam_app_img4.png", width: 800, height: 500 },
+      { src: "/images/slam_app_img5.png", width: 800, height: 500 },
+      { src: "/images/slam_app_img6.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_SLAM_Brochure.pdf",
     pkg: "Building Layout Package (BLP)",
@@ -267,6 +277,10 @@ const products: Product[] = [
       { src: "/images/slide_app_img1.png", width: 800, height: 500 },
       { src: "/images/slide_app_img2.png", width: 800, height: 500 },
       { src: "/images/slide_app_img3.png", width: 800, height: 500 },
+      { src: "/images/slide_app_img4.png", width: 800, height: 500 },
+      { src: "/images/slide_app_img5.png", width: 800, height: 500 },
+      { src: "/images/slide_app_img6.png", width: 800, height: 500 },
+      { src: "/images/slide_app_img7.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_SLIDE_Brochure.pdf",
     pkg: "Building Layout Package (BLP)",
@@ -395,7 +409,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <section>
               <SectionHeading>Screenshots</SectionHeading>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {product.screenshots.slice(0, 6).map((s) => (
+                {product.screenshots.map((s) => (
                   <Image
                     key={s.src}
                     src={s.src}
