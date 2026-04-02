@@ -17,6 +17,7 @@ interface Product {
   pricing: string;
   desc: string;
   img: string;
+  headerImg: string;
   screenshots: { src: string; width: number; height: number }[];
   brochure: string;
   pkg: string;
@@ -31,8 +32,8 @@ const products: Product[] = [
     pricing: "Free",
     desc: "Interactive Component Designer (ICODE™) is a software application designed to enable engineers to carry out design of common structural engineering components on Windows operating systems. It provides modules for design of structural components as per IS456-2000 standards. The interface is designed as a single dialog based application with separate tabs for each design module.",
     img: "/images/icode_img.jpg",
+    headerImg: "/images/icode_web_img2.jpg",
     screenshots: [
-      { src: "/images/icode_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/icode_ColumnDesignTab.png", width: 800, height: 500 },
       { src: "/images/icode_SlabDesignTab.png", width: 800, height: 500 },
       { src: "/images/icode_IFDesignTab.png", width: 800, height: 500 },
@@ -74,8 +75,8 @@ const products: Product[] = [
     pricing: "Contact for Pricing",
     desc: "DXF Structural Modeler (DXFMOD™) is a standalone application to convert 2D and 3D structures modeled in AutoCAD environment. The aim is to provide a graphical interface to model general structures, take away the laborious process of creating the model manually, generate numeric data automatically and for model verification. It can also be used as an independent structural modeler to model any structure either in 2D or 3D from scratch.",
     img: "/images/dxfmod_img.jpg",
+    headerImg: "/images/dxfmod_web_img2.jpg",
     screenshots: [
-      { src: "/images/dxfmod_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/dxfmod_app_img1.png", width: 800, height: 500 },
       { src: "/images/dxfmod_app_img2.png", width: 800, height: 500 },
       { src: "/images/dxfmod_app_img3.png", width: 800, height: 500 },
@@ -123,8 +124,8 @@ const products: Product[] = [
     pricing: "Contact for Pricing",
     desc: "Analysis Processor (ANAPRO™) is a software application designed to enable engineers to carry out analysis of structures to understand behavior under external forces. It is designed for Windows® operating systems. It can be used to analyze 3D structures modeled using Truss, Beam, Spring and Plate/Shell elements. Completely integrated with DXFMOD and SLAM for modeling and STRIP for post-processing.",
     img: "/images/anapro_img.jpg",
+    headerImg: "/images/anapro_web_img.jpg",
     screenshots: [
-      { src: "/images/anapro_web_img.jpg", width: 800, height: 450 },
       { src: "/images/anapro_app_img.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_ANAPRO_Brochure.pdf",
@@ -153,8 +154,8 @@ const products: Product[] = [
     pricing: "Contact for Pricing",
     desc: "Structural Investigation Processor (STRIP™) is a software application designed to enable engineers to investigate structural modeling and behavior under external forces, and visualize induced internal forces. Designed for Windows® operating systems. Supports a neutral format to share model and analysis result data with third party structural applications.",
     img: "/images/strip_img.jpg",
+    headerImg: "/images/strip_web_img2.jpg",
     screenshots: [
-      { src: "/images/strip_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/strip_app_img1.png", width: 800, height: 500 },
       { src: "/images/strip_app_img2.png", width: 800, height: 500 },
       { src: "/images/strip_app_img3.png", width: 800, height: 500 },
@@ -210,8 +211,8 @@ const products: Product[] = [
     pricing: "Contact for Pricing",
     desc: "Structural Layout Modeler (SLAM™) is an application to model building structures in 3D with simple modeling concepts defined in 2D with 3D visualization capabilities. Takes advantage of general building designed in levels and plan laid out using grid lines. Also models lintels, chajjas, and provides comprehensive load generation including seismic and wind loads. Supports DXF import to combine space frames with building models.",
     img: "/images/slam_img.jpg",
+    headerImg: "/images/slam_web_img2.jpg",
     screenshots: [
-      { src: "/images/slam_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/slam_app_img1.png", width: 800, height: 500 },
       { src: "/images/slam_app_img2.png", width: 800, height: 500 },
       { src: "/images/slam_app_img3.png", width: 800, height: 500 },
@@ -260,8 +261,8 @@ const products: Product[] = [
     pricing: "Contact for Pricing",
     desc: "Structural Integrated Designer (SLIDE™) is an application integrated with SLAM and ANAPRO to post-process results, visualize response, design and detail building structures as per Indian Standard. Provides extensive features for the structural engineer's design process. Allows flexibility to design elements interactively or in a fully automated process, and auto-generates production drawings.",
     img: "/images/slide_img.jpg",
+    headerImg: "/images/slide_web_img2.jpg",
     screenshots: [
-      { src: "/images/slide_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/slide_app_img1.png", width: 800, height: 500 },
       { src: "/images/slide_app_img2.png", width: 800, height: 500 },
       { src: "/images/slide_app_img3.png", width: 800, height: 500 },
@@ -371,15 +372,26 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Hero */}
-      <div className="bg-slate-900 text-white py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end gap-6">
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold mb-2">{product.name}</h1>
-            <p className="text-white/70 text-xl">{product.tagline}</p>
+      <div className="relative text-white">
+        <Image
+          src={product.headerImg}
+          alt={product.name}
+          width={1200}
+          height={400}
+          className="w-full h-64 object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-slate-900/70" />
+        <div className="absolute inset-0 flex items-end">
+          <div className="max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-8 flex flex-col sm:flex-row sm:items-end gap-4">
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold mb-2">{product.name}</h1>
+              <p className="text-white/80 text-xl">{product.tagline}</p>
+            </div>
+            <span className={`self-start sm:self-auto shrink-0 inline-block text-sm font-semibold px-4 py-1.5 rounded-full ${isFree ? "bg-emerald-500 text-white" : "bg-slate-700 text-slate-200"}`}>
+              {isFree ? "Free" : "Desktop Software"}
+            </span>
           </div>
-          <span className={`self-start sm:self-auto shrink-0 inline-block text-sm font-semibold px-4 py-1.5 rounded-full ${isFree ? "bg-emerald-500 text-white" : "bg-slate-700 text-slate-200"}`}>
-            {isFree ? "Free" : "Desktop Software"}
-          </span>
         </div>
       </div>
 
