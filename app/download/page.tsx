@@ -19,18 +19,21 @@ const softwarePackages = [
     full: "Structural Component Package",
     desc: "Quick design of individual structural components.",
     includes: "Includes: ICODE",
+    installer: "/downloads/Shear3D_SCP_Install.zip",
   },
   {
     name: "GSP",
     full: "General Structure Package",
     desc: "Modeling and analysis of general structures.",
     includes: "Includes: DXFMOD, ANAPRO, STRIP",
+    installer: null,
   },
   {
     name: "BLP",
     full: "Building Layout Package",
     desc: "Complete RC building design workflow.",
     includes: "Includes: SLAM, ANAPRO, SLIDE",
+    installer: null,
   },
 ];
 
@@ -105,12 +108,23 @@ export default function DownloadPage() {
                     </div>
                     <p className="text-[#2b2b2b] dark:text-gray-100 mb-2 text-sm">{pkg.desc}</p>
                     <p className="text-xs text-[#605f5f] dark:text-gray-400 mb-6 font-medium">{pkg.includes}</p>
-                    <button
-                      onClick={() => openModal(pkg.name)}
-                      className="w-full bg-[#c52100] hover:bg-[#a01900] text-white font-semibold py-2 rounded-lg transition-colors text-sm"
-                    >
-                      Request Download
-                    </button>
+                    {pkg.installer ? (
+                      <a
+                        href={pkg.installer}
+                        download
+                        className="flex items-center justify-center gap-2 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 rounded-lg transition-colors text-sm"
+                      >
+                        <Download size={14} />
+                        Download (ZIP, 3.8 MB)
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => openModal(pkg.name)}
+                        className="w-full bg-[#c52100] hover:bg-[#a01900] text-white font-semibold py-2 rounded-lg transition-colors text-sm"
+                      >
+                        Request Download
+                      </button>
+                    )}
                   </div>
                 </div>
             ))}
