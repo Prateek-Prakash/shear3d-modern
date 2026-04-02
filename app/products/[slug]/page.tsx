@@ -32,8 +32,6 @@ const products: Product[] = [
     desc: "Interactive Component Designer (ICODE™) is a software application designed to enable engineers to carry out design of common structural engineering components on Windows operating systems. It provides modules for design of structural components as per IS456-2000 standards. The interface is designed as a single dialog based application with separate tabs for each design module.",
     img: "/images/icode_img.jpg",
     screenshots: [
-      { src: "/images/icode_web_img.jpg", width: 800, height: 450 },
-      { src: "/images/icode_web_img1.jpg", width: 800, height: 450 },
       { src: "/images/icode_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/icode_ColumnDesignTab.png", width: 800, height: 500 },
       { src: "/images/icode_SlabDesignTab.png", width: 800, height: 500 },
@@ -77,8 +75,6 @@ const products: Product[] = [
     desc: "DXF Structural Modeler (DXFMOD™) is a standalone application to convert 2D and 3D structures modeled in AutoCAD environment. The aim is to provide a graphical interface to model general structures, take away the laborious process of creating the model manually, generate numeric data automatically and for model verification. It can also be used as an independent structural modeler to model any structure either in 2D or 3D from scratch.",
     img: "/images/dxfmod_img.jpg",
     screenshots: [
-      { src: "/images/dxfmod_web_img.jpg", width: 800, height: 450 },
-      { src: "/images/dxfmod_web_img1.jpg", width: 800, height: 450 },
       { src: "/images/dxfmod_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/dxfmod_app_img1.png", width: 800, height: 500 },
       { src: "/images/dxfmod_app_img2.png", width: 800, height: 500 },
@@ -129,8 +125,6 @@ const products: Product[] = [
     img: "/images/anapro_img.jpg",
     screenshots: [
       { src: "/images/anapro_web_img.jpg", width: 800, height: 450 },
-      { src: "/images/anapro_web_img1.jpg", width: 800, height: 450 },
-      { src: "/images/anapro_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/anapro_app_img.png", width: 800, height: 500 },
     ],
     brochure: "/brochures/SHEAR3D_ANAPRO_Brochure.pdf",
@@ -160,8 +154,6 @@ const products: Product[] = [
     desc: "Structural Investigation Processor (STRIP™) is a software application designed to enable engineers to investigate structural modeling and behavior under external forces, and visualize induced internal forces. Designed for Windows® operating systems. Supports a neutral format to share model and analysis result data with third party structural applications.",
     img: "/images/strip_img.jpg",
     screenshots: [
-      { src: "/images/strip_web_img.jpg", width: 800, height: 450 },
-      { src: "/images/strip_web_img1.jpg", width: 800, height: 450 },
       { src: "/images/strip_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/strip_app_img1.png", width: 800, height: 500 },
       { src: "/images/strip_app_img2.png", width: 800, height: 500 },
@@ -219,8 +211,6 @@ const products: Product[] = [
     desc: "Structural Layout Modeler (SLAM™) is an application to model building structures in 3D with simple modeling concepts defined in 2D with 3D visualization capabilities. Takes advantage of general building designed in levels and plan laid out using grid lines. Also models lintels, chajjas, and provides comprehensive load generation including seismic and wind loads. Supports DXF import to combine space frames with building models.",
     img: "/images/slam_img.jpg",
     screenshots: [
-      { src: "/images/slam_web_img.jpg", width: 800, height: 450 },
-      { src: "/images/slam_web_img1.jpg", width: 800, height: 450 },
       { src: "/images/slam_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/slam_app_img1.png", width: 800, height: 500 },
       { src: "/images/slam_app_img2.png", width: 800, height: 500 },
@@ -271,8 +261,6 @@ const products: Product[] = [
     desc: "Structural Integrated Designer (SLIDE™) is an application integrated with SLAM and ANAPRO to post-process results, visualize response, design and detail building structures as per Indian Standard. Provides extensive features for the structural engineer's design process. Allows flexibility to design elements interactively or in a fully automated process, and auto-generates production drawings.",
     img: "/images/slide_img.jpg",
     screenshots: [
-      { src: "/images/slide_web_img.jpg", width: 800, height: 450 },
-      { src: "/images/slide_web_img1.jpg", width: 800, height: 450 },
       { src: "/images/slide_web_img2.jpg", width: 800, height: 450 },
       { src: "/images/slide_app_img1.png", width: 800, height: 500 },
       { src: "/images/slide_app_img2.png", width: 800, height: 500 },
