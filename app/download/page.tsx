@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Download, X } from "lucide-react";
-import FadeIn from "@/components/FadeIn";
 
 const brochures = [
   { name: "ICODE™", slug: "icode", img: "/images/icode_brochure.png" },
@@ -56,14 +55,11 @@ export default function DownloadPage() {
       {/* Brochures */}
       <section className="py-16 bg-[#fafafa] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
             <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-2">Product Brochures</h2>
             <p className="text-[#605f5f] dark:text-gray-400 mb-8">Download detailed brochures for each product</p>
-          </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {brochures.map((b, i) => (
-              <FadeIn key={b.slug} delay={i * 0.05}>
-                <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+                <div key={b.slug} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
                   <Image src={b.img} alt={b.name} width={206} height={58} className="w-full h-auto" />
                   <div className="p-3">
                     <p className="text-sm font-semibold text-[#2b2b2b] dark:text-gray-100 mb-2">{b.name}</p>
@@ -77,7 +73,6 @@ export default function DownloadPage() {
                     </a>
                   </div>
                 </div>
-              </FadeIn>
             ))}
           </div>
         </div>
@@ -86,14 +81,11 @@ export default function DownloadPage() {
       {/* Software Packages */}
       <section className="py-16 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
             <h2 className="text-2xl font-bold text-[#2b2b2b] dark:text-gray-100 mb-2">Software Packages</h2>
             <p className="text-[#605f5f] dark:text-gray-400 mb-8">Request a download for your chosen package</p>
-          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {softwarePackages.map((pkg, i) => (
-              <FadeIn key={pkg.name} delay={i * 0.1}>
-                <div className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <div key={pkg.name} className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
                   <div className="h-1 bg-[#c52100]" />
                   <div className="p-6">
                     <div className="flex items-baseline gap-2 mb-2">
@@ -110,7 +102,6 @@ export default function DownloadPage() {
                     </button>
                   </div>
                 </div>
-              </FadeIn>
             ))}
           </div>
         </div>
